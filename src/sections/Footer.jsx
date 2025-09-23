@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import Confettie from 'react-confetti'
 // The main App component containing the complete footer
 const SecondApp = () => {
 //   const primaryColor = '#a855f7'; // A purple color for the logo and icons
   const secondaryColor = '#e2e8f0'; // A light gray for text
-  const [show,setShow] = useState(false);
   // Helper component to render SVG icons
   const Icon = ({ path, className, size = 20 }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width={size} height={size} className={className}>
@@ -70,20 +67,9 @@ const SecondApp = () => {
       </a>
     ));
   };
-  const confettieMaker=()=>{
-    const container = document.querySelector(".confettie");
-    container.addEventListener('mouseover',function(){
-         // Trigger confetti after 1 second
-    setTimeout(() => setShow(true), 1000);
-
-    // Stop confetti after 5 seconds
-    setTimeout(() => setShow(false), 6000);
-    })
-  }
   return (
     <section className='mt-[23rem]'>
         <div className="bg-gray-900 text-gray-300 p-8 md:p-12 lg:p-16 font-sans">
-            {show&&Confettie}
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
               {/* Logo and Social Media Section */}
